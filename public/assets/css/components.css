@@ -1,0 +1,128 @@
+/* ==========================================================================
+   COMPONENTS DEFAULT STYLE
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Lists and Anchors
+   -------------------------------------------------------------------------- */
+li, a {
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  color: rgb(252, 228, 200);
+  background-color: transparent;
+  transition: color 0.3s ease, background 0.3s ease, padding 0.3s ease;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+    Buttons
+   -------------------------------------------------------------------------- */
+.btn-main {
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #fc9713, #eeb156);
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 1s ease;
+}
+
+.btn-main:hover { 
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(252, 151, 19, 0.5);
+    background: linear-gradient(90deg, #fc9713, #805009); }
+
+/* --------------------------------------------------------------------------
+   a glass effect
+   -------------------------------------------------------------------------- */
+.glass {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+
+/* --------------------------------------------------------------------------
+   INPUTS
+   -------------------------------------------------------------------------- */
+.input-field {
+    margin-bottom: 20px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #1f1f1f;
+    color: var(--secondary);
+    transition: border 0.3s ease, background 0.3s ease;
+}
+
+.input-field input:focus {
+    background: #2a2a2a;
+    border: 1px solid var(--primary);
+}
+
+.signup-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+    text-align: center;
+}
+
+.signup-link a {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+    color: var(--secondary);
+}
+
+
+/* --------------------------------------------------------------------------
+    Error or Success MESSAGES!
+   -------------------------------------------------------------------------- */
+.error-box {
+    background: #ffe6e6;
+    color: #a94442;
+    border: 1px solid #f5c2c2;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.error-box p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.success-box {
+    background: #e9ffe6;
+    color: #57a942;
+    border: 1px solid #c2f5c6;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.success-box p {
+    margin: 0;
+    line-height: 1.5;
+}

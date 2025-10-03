@@ -1,0 +1,164 @@
+/* ==========================================================================
+   TEAM STYLES (used by teams & users)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   (Variables)
+   -------------------------------------------------------------------------- */
+:root {
+  --employee-font-size: 0.9rem;
+  --employee-font-size-sm: 0.85rem;
+  --employee-font-size-xs: 0.8rem;
+
+  --employee-padding: 0.75rem 1rem;
+  --employee-padding-sm: 0.65rem;
+
+  --employee-min-width: 600px;
+  --employee-min-width-sm: 500px;
+
+  --radius-default: 12px;
+  --radius-sm: 6px;
+
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.6);
+
+  --status-active: #2ecc71;
+  --status-inactive: #e74c3c;
+  --status-leave: #f39c12;
+}
+
+/* --------------------------------------------------------------------------
+   Employee Table
+   -------------------------------------------------------------------------- */
+.employee-table {
+  background: var(--panel);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-default);
+  box-shadow: var(--shadow-md);
+  overflow-x: auto;
+  width: 100%;
+}
+
+.employee-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--employee-font-size);
+  min-width: var(--employee-min-width);
+}
+
+.employee-table thead {
+  background: var(--background);
+}
+
+.employee-table th,
+.employee-table td {
+  padding: var(--employee-padding);
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.employee-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: var(--employee-font-size-sm);
+}
+
+.employee-table tr:hover td {
+  background: rgba(88, 88, 88, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   Employee Info
+   -------------------------------------------------------------------------- */
+.employee-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.employee-info .name {
+  font-weight: 500;
+}
+
+.employee-info .email,
+.employee-info .phone {
+  font-size: var(--employee-font-size-sm);
+  color: var(--secondary);
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Status Variants
+   -------------------------------------------------------------------------- */
+.status.active {
+  background: var(--status-active);
+}
+
+.status.inactive {
+  background: var(--status-inactive);
+}
+
+.status.leave {
+  background: var(--status-leave);
+}
+
+/* --------------------------------------------------------------------------
+   Form Overrides
+   -------------------------------------------------------------------------- */
+.search input,
+.search select {
+  padding: 0.6rem 2.5rem; /* extra space for icons */
+}
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .employee-table th,
+  .employee-table td {
+    font-size: var(--employee-font-size-xs);
+    padding: var(--employee-padding-sm);
+  }
+
+  .search {
+    gap: 0.5rem;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .full-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .topbar h1 {
+    font-size: 1.3rem;
+  }
+
+  .employee-table table {
+    min-width: var(--employee-min-width-sm);
+  }
+
+  .modal-content {
+    width: 70%;
+  }
+}

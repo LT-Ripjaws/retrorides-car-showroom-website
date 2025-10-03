@@ -1,0 +1,192 @@
+/* ==========================================================================
+   CARS & BOOKINGS TABLE STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   (Variables)
+   -------------------------------------------------------------------------- */
+:root {
+  --table-font-size: 0.9rem;
+  --table-font-size-sm: 0.78rem;
+  --table-font-size-xs: 0.75rem;
+
+  --table-padding: 0.75rem 1rem;
+  --table-padding-md: 10px 12px;
+  --table-padding-sm: 6px 8px;
+  --table-padding-xs: 5px 6px;
+
+  --desc-width-lg: 280px;
+  --desc-width-md: 240px;
+  --desc-width-sm: 200px;
+  --desc-width-xs: 160px;
+
+  --radius-default: 12px;
+  --radius-img: 6px;
+
+  --shadow-table: 0 8px 20px rgba(0, 0, 0, 0.6);
+
+  --status-available: #2ecc71;
+  --status-sold: #e74c3c;
+  --status-maintenance: #f39c12;
+}
+
+/* --------------------------------------------------------------------------
+   Table Base
+   -------------------------------------------------------------------------- */
+.table {
+  background: var(--panel);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-default);
+  box-shadow: var(--shadow-table);
+  overflow-x: auto;
+  width: 100%;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--table-font-size);
+  min-width: 900px;
+}
+
+.table thead {
+  background: var(--background);
+}
+
+.table th,
+.table td {
+  padding: var(--table-padding);
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.table tr:hover td {
+  background: rgba(88, 88, 88, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   Table Elements
+   -------------------------------------------------------------------------- */
+.table img {
+  border-radius: var(--radius-img);
+  background: transparent;
+}
+
+.table td.description {
+  max-width: var(--desc-width-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --------------------------------------------------------------------------
+   Status Variants
+   -------------------------------------------------------------------------- */
+.status.available {
+  background: var(--status-available);
+}
+
+.status.sold {
+  background: var(--status-sold);
+}
+
+.status.maintenance {
+  background: var(--status-maintenance);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+
+/* Large Screens (max-width: 1400px) */
+@media (max-width: 1400px) {
+  .full-container {
+    grid-template-columns: 240px 1fr;
+  }
+  .table td.description {
+    max-width: var(--desc-width-lg);
+  }
+}
+
+/* Desktops (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .full-container {
+    grid-template-columns: 220px 1fr;
+  }
+  .table th,
+  .table td {
+    font-size: 0.95rem;
+    padding: var(--table-padding-md);
+  }
+  .table td.description {
+    max-width: var(--desc-width-md);
+  }
+}
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .table th,
+  .table td {
+    font-size: 0.85rem;
+    padding: 0.65rem;
+  }
+  .table td.description {
+    max-width: var(--desc-width-sm);
+  }
+  .full-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .sidebar {
+    width: 100%;
+  }
+}
+
+/* Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 70%;
+  }
+}
+
+/* Mobile Phones (max-width: 576px) */
+@media (max-width: 576px) {
+  .table {
+    padding: 0.5rem;
+  }
+  .table th,
+  .table td {
+    font-size: var(--table-font-size-sm);
+    padding: var(--table-padding-sm);
+  }
+  .table td.description {
+    max-width: var(--desc-width-xs);
+  }
+  .form-actions {
+    flex-direction: column;
+  }
+  .form-actions button {
+    width: 100%;
+  }
+}
+
+/* Extra Small Phones (max-width: 397px) */
+@media (max-width: 397px) {
+  .table th,
+  .table td {
+    font-size: var(--table-font-size-xs);
+    padding: var(--table-padding-xs);
+  }
+  .status {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem;
+  }
+}

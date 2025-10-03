@@ -1,0 +1,274 @@
+/* ==========================================================================
+   LOGIN PAGE STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   (VARIABLES)
+   -------------------------------------------------------------------------- */
+:root {
+    /* Layout */
+    --login-max-width: 1100px;
+    --login-height: 600px;
+    --login-border-radius: 20px;
+    --login-border-radius-mobile: 12px;
+    
+    /* Spacing */
+    --login-padding: 60px 50px;
+    --login-padding-tablet: 40px 30px;
+    --login-padding-mobile: 30px 20px;
+    --login-padding-small: 20px 15px;
+    
+    /* Slideshow */
+    --slide-duration: 30s;
+    --slide-transition: 5s;
+    
+    /* Typography */
+    --login-title-size: 2.5rem;
+    --login-title-tablet: 1.8rem;
+    --login-title-mobile: 1.6rem;
+    --login-title-small: 1.4rem;
+    
+    /* Image Heights */
+    --slideshow-mobile-height: 200px;
+}
+
+/* --------------------------------------------------------------------------
+   Main Container
+   -------------------------------------------------------------------------- */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 10px);
+    padding: 40px 20px;
+    background: var(--background2);
+}
+
+/* --------------------------------------------------------------------------
+   Login Block (Card)
+   -------------------------------------------------------------------------- */
+.login-block {
+    display: flex;
+    width: 100%;
+    max-width: var(--login-max-width);
+    height: var(--login-height);
+    background: var(--panel);
+    border-radius: var(--login-border-radius);
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   Left Part (Image Slideshow)
+   -------------------------------------------------------------------------- */
+.left-part {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-slides {
+    display: flex;
+    height: 100%;
+    animation: slideshow var(--slide-duration) infinite linear;
+}
+
+.login-slides img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slideshow Animation */
+@keyframes slideshow {
+    0%, 20%   { transform: translateX(0%); }
+    25%, 45%  { transform: translateX(-100%); }
+    50%, 70%  { transform: translateX(-200%); }
+    75%, 95%  { transform: translateX(-300%); }
+    100%      { transform: translateX(0%); }
+}
+
+/* --------------------------------------------------------------------------
+   Right Part (Form Content)
+   -------------------------------------------------------------------------- */
+.right-part {
+    flex: 1;
+    color: var(--secondary);
+    padding: var(--login-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-part h1 {
+    font-size: var(--login-title-size);
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.right-part p {
+    margin-bottom: 30px;
+    color: var(--text-secondary);
+}
+
+/* Full-width button for login */
+.right-part .btn-main {
+    width: 100%;
+    padding: 15px;
+}
+
+/* --------------------------------------------------------------------------
+   Form Elements
+   -------------------------------------------------------------------------- */
+.input-field {
+    margin-bottom: 20px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--secondary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-field input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.input-field input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Remember Me Checkbox */
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+}
+
+.remember input[type="checkbox"] {
+    cursor: pointer;
+}
+
+/* Sign Up Link */
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--primary);
+}
+
+.signup-link a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Large Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    main {
+        padding: 40px 20px;
+    }
+    
+    .login-block {
+        max-width: 900px;
+        min-height: 500px;
+    }
+    
+    .right-part {
+        padding: var(--login-padding-tablet);
+    }
+    
+    .right-part h1 {
+        font-size: var(--login-title-tablet);
+    }
+}
+
+/* Tablets & Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .login-block {
+        flex-direction: column;
+        min-height: auto;
+        height: auto;
+    }
+    
+    .left-part {
+        height: var(--slideshow-mobile-height);
+        flex: none;
+    }
+    
+    .right-part {
+        padding: var(--login-padding-mobile);
+    }
+    
+    .right-part h1 {
+        font-size: var(--login-title-mobile);
+    }
+    
+    .right-part .btn-main {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    main {
+        padding: 20px 10px;
+    }
+    
+    .left-part {
+        display: none;
+    }
+    
+    .login-block {
+        border-radius: var(--login-border-radius-mobile);
+    }
+    
+    .right-part {
+        padding: var(--login-padding-small);
+    }
+    
+    .right-part h1 {
+        font-size: var(--login-title-small);
+    }
+    
+    .right-part p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    
+    .input-field {
+        margin-bottom: 15px;
+    }
+    
+    .input-field input {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .login-slides {
+        animation-duration: 0.01ms !important;
+    }
+}

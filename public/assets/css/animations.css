@@ -1,0 +1,83 @@
+/* this will fade the text down */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px); /* start slightly above */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* normal position */
+  }
+}
+
+
+/* Text effect on scroll, just call this class where needed */
+.autoShowText {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: text-appear 1s ease-out both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+}
+
+@keyframes text-appear {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* image effect on scroll, just call this class where needed */
+.imageReveal {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    filter: grayscale(1) blur(3px);
+    animation: image-appear 0.7s ease-out both; 
+    animation-timeline: view(); 
+    animation-range: entry 0% cover 40%;    
+}
+
+@keyframes image-appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+        filter: grayscale(1) blur(3px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: none;
+    }
+}
+
+
+/* to slide smth from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* for those text or any fade in reveal upon scroll */
+/* Default hidden state */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Visible state (when scrolled into view) */
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
+}

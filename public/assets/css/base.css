@@ -1,0 +1,109 @@
+/* ==========================================================================
+   GLOBAL BASE STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Fonts
+   -------------------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap");
+
+/* --------------------------------------------------------------------------
+   Reset
+   -------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --------------------------------------------------------------------------
+   Body
+   -------------------------------------------------------------------------- */
+body {
+  font-family: "Bodoni Moda", sans-serif;
+  background-color: #0e0d0d;
+  color: #e6dccd;
+  min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar that matches me site (Webkit browsers only) */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scroll-background);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--scroll-accent);
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-hover);
+}
+
+
+/* --------------------------------------------------------------------------
+   Layout
+   -------------------------------------------------------------------------- */
+main {
+  padding-top: 75px;
+  min-height: 100vh;
+}
+
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------------------
+   Theme Variables
+   -------------------------------------------------------------------------- */
+:root {
+  --primary: #fc9713;
+  --secondary: #e6dccd;
+
+  --accent: linear-gradient(90deg, #fc9713, #eeb156);
+  --hover: linear-gradient(90deg, #fc9713, #805009);
+  --orange-grad: linear-gradient(135deg, rgba(248, 135, 30, 0.445), rgba(0, 0, 0, 1));
+
+  --dark: #242322;
+  --background: linear-gradient(to right, #444343, #242322);
+  --background2: linear-gradient(135deg, #000000, #46423f);
+  --panel: linear-gradient(135deg, #46423f, #000000);
+
+  /* for scrollbars */
+  --scroll-accent: #854b00;
+  --scroll-hover: #da9125;
+  --scroll-background: #242322;
+}

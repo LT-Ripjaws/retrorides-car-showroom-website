@@ -1,0 +1,417 @@
+/* ==========================================================================
+   HEADER & FOOTER STYLES 
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+    (Variables)
+   -------------------------------------------------------------------------- */
+:root {
+    /* Logo & Branding */
+    --logo-size: 50px;
+    --logo-size-mobile: 40px;
+    --brand-color: #d6cbab;
+    --brand-font-size: 1.8rem;
+    
+    /* Navigation */
+    --nav-padding: 1rem 3rem;
+    --nav-gap: 2rem;
+    --nav-link-padding: 0.5rem 1rem;
+    --nav-mobile-top: 80px;
+    
+    /* Footer */
+    --footer-bg: #111;
+    --footer-text: #ccc;
+    --footer-text-hover: #fff;
+    --footer-border: #333;
+    --footer-padding: 40px 50px 20px;
+    
+    /* Shadows */
+    --shadow-nav: 0 8px 20px rgba(0, 0, 0, 0.6);
+    
+    /* Border Radius */
+    --radius-link: 4px;
+    --radius-btn: 20px;
+    
+    /* Transitions */
+    --transition-smooth: 0.3s ease;
+    --transition-menu: 0.4s ease;
+    
+    /* Z-Index Layers */
+    --z-header: 1000;
+    --z-hamburger: 1001;
+    --z-nav-mobile: 999;
+}
+
+/* --------------------------------------------------------------------------
+   Header & Navigation
+   -------------------------------------------------------------------------- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: var(--z-header);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--nav-padding);
+    background: var(--background);
+    box-shadow: var(--shadow-nav);
+}
+
+/* Logo Section */
+.logo {
+    width: var(--logo-size);
+    height: var(--logo-size);
+    margin-right: 10px;
+}
+
+.logo-section a {
+    text-decoration: none;
+    font-size: var(--brand-font-size);
+    font-weight: bold;
+    color: var(--brand-color);
+    cursor: pointer;
+}
+
+/* Navigation Links */
+ul {
+    list-style: none;
+    display: flex;
+    gap: var(--nav-gap);
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    padding: var(--nav-link-padding);
+    border-radius: var(--radius-link);
+    position: relative;
+    transition: all var(--transition-smooth);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #242322;
+    background: var(--hover);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Navigation Button */
+.nav-btn .btn-main {
+    padding: 0.6rem 2.5rem;
+    border-radius: var(--radius-btn);
+    font-weight: lighter;
+    cursor: pointer;
+    border: 2px solid var(--dark);
+}
+
+/* Hide mobile nav button on desktop */
+.mobile-nav-btn {
+    display: none;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: var(--z-hamburger);
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--brand-color);
+    border-radius: 2px;
+    transition: var(--transition-smooth);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text-hover);
+    padding: var(--footer-padding);
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 10px;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.footer-section {
+    min-width: 200px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--brand-color);
+}
+
+.footer-section p,
+.footer-section li,
+.footer-section a {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--footer-text);
+    text-decoration: none;
+    transition: color var(--transition-smooth);
+}
+
+.footer-section a:hover {
+    color: var(--footer-text-hover);
+    text-decoration: underline;
+}
+
+.footer-section ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: var(--brand-color);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.social-links a:hover {
+    color: var(--footer-text-hover);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid var(--footer-border);
+    padding-top: 15px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN - Mobile First Approach
+   ========================================================================== */
+
+/* Extra Large Screens (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .navbar {
+        padding: 1rem 5rem;
+    }
+    
+    .nav-links {
+        gap: 2.5rem;
+    }
+}
+
+/* Large Tablets (max-width: 1199px) */
+@media (max-width: 1199px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+    
+    .nav-links {
+        gap: 1.5rem;
+    }
+    
+    .logo {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .logo-section a {
+        font-size: 1.6rem;
+    }
+}
+
+/* Tablets & Mobile (max-width: 991px) */
+@media (max-width: 991px) {
+    .navbar {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Hide desktop nav button on mobile */
+    .desktop-nav-btn {
+        display: none;
+    }
+    
+    /* Show mobile nav button */
+    .mobile-nav-btn {
+        display: block;
+        width: 100%;
+    }
+    
+    /* Mobile Navigation Menu */
+    .nav-links {
+        position: fixed;
+        top: var(--nav-mobile-top);
+        left: 0;
+        width: 100%;
+        background: var(--background);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        gap: 1rem;
+        box-shadow: var(--shadow-nav);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-menu);
+        z-index: var(--z-nav-mobile);
+        height: auto;
+    }
+    
+    .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-links li {
+        width: 100%;
+    }
+    
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+        display: block;
+    }
+    
+    /* Mobile nav button styling */
+    .mobile-nav-btn {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid rgba(214, 203, 171, 0.2);
+    }
+    
+    .mobile-nav-btn .btn-main {
+        width: 100%;
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .mobile-nav-btn .user-menu {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .mobile-nav-btn .user-menu a {
+        width: 100%;
+    }
+    
+    .mobile-nav-btn .user-menu .btn-main {
+        width: 100%;
+    }
+    
+    .mobile-nav-btn .user-greeting {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+        display: block;
+    }
+}
+
+/* Small Tablets (max-width: 767px) */
+@media (max-width: 767px) {
+    .logo-section a {
+        font-size: 1.4rem;
+    }
+    
+    .logo {
+        width: var(--logo-size-mobile);
+        height: var(--logo-size-mobile);
+        margin-right: 8px;
+    }
+    
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+    
+    .nav-links {
+        top: 70px;
+        padding: 1.5rem 1rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Mobile Phones (max-width: 575px) */
+@media (max-width: 575px) {
+    .logo-text {
+        display: none;
+    }
+    
+    .logo {
+        margin-right: 0;
+    }
+    
+    .navbar {
+        padding: 0.8rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,532 @@
+/* ==========================================================================
+   CONTACT PAGE STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   (Variables)
+   -------------------------------------------------------------------------- */
+:root {
+    /* Typography */
+    --font-size-hero: 3.5rem;
+    --font-size-hero-subtitle: 1.4rem;
+    --font-size-section: 2.5rem;
+    --font-size-card-title: 1.4rem;
+    --font-size-body: 1.125rem;
+    --font-size-small: 0.95rem;
+    
+    /* Spacing */
+    --hero-padding: 6rem 2rem 4rem;
+    --section-padding: 5rem 2rem;
+    --card-padding: 2rem;
+    --form-padding: 2.5rem;
+    --gap-sm: 0.5rem;
+    --gap-md: 1.5rem;
+    --gap-lg: 2rem;
+    --gap-xl: 4rem;
+    
+    /* Shadows */
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+    
+    /* Border Radius */
+    --radius-default: 12px;
+    --radius-input: 8px;
+    --radius-icon: 50%;
+    
+    /* Colors */
+    --overlay-dark: rgba(0, 0, 0, 0.3);
+    --border-input: rgba(255, 255, 255, 0.1);
+    --border-divider: rgba(255, 255, 255, 0.1);
+    --focus-shadow: rgba(252, 151, 19, 0.25);
+    
+    /* Transitions */
+    --transition-smooth: 0.3s ease;
+    
+    /* Container */
+    --container-max: 1200px;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section
+   -------------------------------------------------------------------------- */
+.contact-hero {
+    background: var(--orange-grad), 
+                url("../images/contact/contact-hero-bg.jpg") center/cover no-repeat;
+    padding: var(--hero-padding);
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.contact-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-dark);
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-hero h1 {
+    font-size: var(--font-size-hero);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-hero-subtitle);
+    margin-bottom: var(--gap-sm);
+    font-weight: 500;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Main Contact Section
+   -------------------------------------------------------------------------- */
+.contact-main {
+    padding: var(--section-padding);
+    background: var(--background);
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--gap-xl);
+    align-items: start;
+}
+
+/* Contact Form */
+.contact-form-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: var(--gap-lg);
+    font-weight: 600;
+}
+
+.contact-form {
+    background: var(--panel);
+    padding: var(--form-padding);
+    border-radius: var(--radius-default);
+    box-shadow: var(--shadow-card);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-md);
+    margin-bottom: var(--gap-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--primary);
+    margin-bottom: var(--gap-sm);
+    font-size: var(--font-size-small);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-input);
+    border-radius: var(--radius-input);
+    background: var(--secondary);
+    color: var(--primary);
+    font-size: 1rem;
+    transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--focus-shadow);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Contact Info Cards
+   -------------------------------------------------------------------------- */
+.contact-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+}
+
+.contact-info-card,
+.business-hours-card {
+    background: var(--panel);
+    padding: var(--card-padding);
+    border-radius: var(--radius-default);
+    box-shadow: var(--shadow-card);
+}
+
+.contact-info-card h3,
+.business-hours-card h3 {
+    font-size: var(--font-size-card-title);
+    color: var(--primary);
+    margin-bottom: var(--gap-md);
+    font-weight: 600;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--accent);
+    border-radius: var(--radius-icon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon svg {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+}
+
+.contact-text h4 {
+    font-size: 1rem;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.contact-text p {
+    color: var(--secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.contact-text a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color var(--transition-smooth);
+}
+
+.contact-text a:hover {
+    color: var(--accent-hover);
+}
+
+/* Business Hours */
+.hours-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-divider);
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+.day {
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.time {
+    color: var(--secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Departments Section
+   -------------------------------------------------------------------------- */
+.departments-section {
+    padding: var(--section-padding);
+    background: var(--orange-grad),
+                url("../images/contact/department-bg.jpg") center/cover no-repeat;
+}
+
+.departments-section h2 {
+    text-align: center;
+    font-size: var(--font-size-section);
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.section-intro {
+    text-align: center;
+    color: var(--secondary);
+    font-size: var(--font-size-body);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.departments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gap-lg);
+}
+
+.department-card {
+    background: var(--panel);
+    padding: var(--card-padding);
+    border-radius: var(--radius-default);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+    border-left: 4px solid var(--accent);
+}
+
+.department-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.department-card h3 {
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.department-card p {
+    color: var(--secondary);
+    line-height: 1.6;
+    margin-bottom: var(--gap-md);
+}
+
+.department-contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+}
+
+.dept-email,
+.dept-phone {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-smooth);
+}
+
+.dept-email:hover,
+.dept-phone:hover {
+    color: var(--accent-hover);
+}
+
+/* --------------------------------------------------------------------------
+   Map Section
+   -------------------------------------------------------------------------- */
+.map-section {
+    padding: var(--section-padding);
+}
+
+.map-section h2 {
+    text-align: center;
+    font-size: var(--font-size-section);
+    color: var(--primary);
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.map-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.map-placeholder {
+    background: var(--panel);
+    border-radius: var(--radius-default);
+    padding: 4rem 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    border: 2px dashed rgba(252, 151, 19, 0.3);
+}
+
+.map-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.map-content p {
+    color: var(--secondary);
+    margin-bottom: var(--gap-sm);
+    font-size: 1.1rem;
+}
+
+.map-content .btn-secondary {
+    margin-top: var(--gap-md);
+    display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   FAQ Section
+   -------------------------------------------------------------------------- */
+.faq-section {
+    padding: var(--section-padding);
+    background: var(--background);
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: var(--font-size-section);
+    color: var(--primary);
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gap-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--panel);
+    padding: var(--card-padding);
+    border-radius: var(--radius-default);
+    box-shadow: var(--shadow-card);
+}
+
+.faq-item h3 {
+    font-size: 1.15rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.faq-item p {
+    color: var(--secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .contact-form {
+        padding: var(--card-padding);
+    }
+}
+
+/* Small Tablets & Large Phones (max-width: 768px) */
+@media (max-width: 768px) {
+    .contact-hero {
+        padding: 4rem 1rem 3rem;
+    }
+    
+    .contact-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .contact-form,
+    .contact-info-card,
+    .business-hours-card {
+        padding: var(--gap-md);
+    }
+    
+    .departments-grid,
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    :root {
+        --font-size-hero: 2rem;
+        --font-size-section: 2rem;
+        --card-padding: 1.5rem;
+    }
+    
+    .contact-hero h1 {
+        font-size: var(--font-size-hero);
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .contact-form-section h2,
+    .departments-section h2,
+    .map-section h2,
+    .faq-section h2 {
+        font-size: var(--font-size-section);
+    }
+    
+    .department-card,
+    .faq-item {
+        padding: var(--card-padding);
+    }
+}

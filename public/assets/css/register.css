@@ -1,0 +1,35 @@
+/* ==========================================================================
+   REGISTER PAGE STYLES
+   ========================================================================== */
+
+  /* --------------------------------------------------------------------------
+   Main Container
+   -------------------------------------------------------------------------- */ 
+main {
+    background: var(--background2);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   REGISTEWRE Block (Card)
+   -------------------------------------------------------------------------- */
+
+.register-card {
+    background: var(--panel);
+    padding: 2rem 2.5rem;
+    border-radius: 10%;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+    width: clamp(320px, 40%, 500px);
+    text-align: center;
+}
+
+.register-card h1 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+
+    

@@ -1,0 +1,422 @@
+/* ==========================================================================
+   COLLECTION PAGE STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   (Variables)
+   -------------------------------------------------------------------------- */
+:root {
+    /* Typography */
+    --font-size-hero: clamp(2.5rem, 6vw, 4.5rem);
+    --font-size-hero-subtitle: clamp(1.2rem, 2.5vw, 2rem);
+    --font-size-section: 2rem;
+    --font-size-price: 1.2rem;
+    --font-size-small: 0.9rem;
+    
+    /* Spacing */
+    --hero-padding: 90px 20px;
+    --section-padding: 60px 20px;
+    --card-padding: 20px;
+    --filter-padding: 35px;
+    --gap-sm: 10px;
+    --gap-md: 20px;
+    --gap-lg: 25px;
+    
+    /* Shadows */
+    --shadow-card: 0 8px 20px rgba(0, 0, 0, 0.6);
+    --shadow-filter: 0 6px 18px rgba(0, 0, 0, 0.4);
+    --shadow-focus: 0 0 8px rgba(230, 57, 70, 0.5);
+    
+    /* Border Radius */
+    --radius-card: 15px;
+    --radius-input: 25px;
+    --radius-filter: 55px;
+    
+    /* Colors */
+    --price-color: #e63946;
+    --border-color: #ddd;
+    --border-focus: #e63946;
+    --text-muted: #777;
+    
+    /* Transitions */
+    --transition-smooth: 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Shared Animations
+   -------------------------------------------------------------------------- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section
+   -------------------------------------------------------------------------- */
+.collection-hero {
+    background: var(--orange-grad), 
+                url('../images/collection/collection-bg.gif') center/cover no-repeat;
+    min-height: 55vh;
+    padding: var(--hero-padding);
+    text-align: center;
+    color: #fff;
+    position: relative;
+    box-shadow: var(--shadow-card);
+}
+
+.collection-hero h1 {
+    font-size: var(--font-size-hero);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInDown 1s ease forwards;
+}
+
+.collection-hero p {
+    font-size: var(--font-size-hero-subtitle);
+    margin: 0;
+    opacity: 0;
+    animation: fadeInDown 1s ease forwards 0.3s;
+}
+
+.search-info {
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.car-count {
+    font-size: 0.95rem;
+    color: var(--secondary);
+    margin-top: 6px;
+    opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   Filters Section
+   -------------------------------------------------------------------------- */
+.filters-section {
+    background: url("../images/Home/testimonials.jpg") center/cover no-repeat; 
+    padding: 50px 20px;
+    box-shadow: var(--shadow-filter);
+    margin-bottom: 5px;
+}
+
+.filters-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: transparent;
+    border-radius: var(--radius-filter);
+    padding: var(--filter-padding);
+    box-shadow: var(--shadow-filter);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+}
+
+.filters-wrapper h2 {
+    font-size: var(--font-size-section);
+    font-weight: bold;
+    color: var(--secondary);
+    text-align: center;
+    margin-bottom: var(--gap-sm);
+    letter-spacing: 1px;
+}
+
+.filters-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+}
+
+/* Search Bar */
+.filter-group.search-group {
+    width: 100%;
+}
+
+#search {
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: var(--radius-input);
+    border: 2px solid var(--border-color);
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='gray' viewBox='0 0 24 24'%3E%3Cpath d='M10 2a8 8 0 105.293 14.293l5.707 5.707 1.414-1.414-5.707-5.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z'/%3E%3C/svg%3E") no-repeat 95% center;
+    background-size: 20px;
+    font-size: 1.1rem;
+    transition: all var(--transition-smooth);
+}
+
+#search:focus {
+    border-color: var(--border-focus);
+    outline: none;
+    box-shadow: var(--shadow-focus);
+}
+
+/* Filter Grid */
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-md);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--secondary);
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 12px 14px;
+    border-radius: var(--radius-card);
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 1rem;
+    transition: all var(--transition-smooth);
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    border-color: var(--border-focus);
+    outline: none;
+    box-shadow: 0 0 6px rgba(230, 57, 70, 0.4);
+}
+
+/* Sort Group */
+.sort-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.sort-group select {
+    min-width: 220px;
+}
+
+/* Filter Actions */
+.filter-actions {
+    display: flex;
+    justify-content: right;
+    gap: var(--gap-card);
+    margin-top: 5px;
+}
+
+/* --------------------------------------------------------------------------
+   Car Collection Grid
+   -------------------------------------------------------------------------- */
+.car-collection {
+    padding: var(--section-padding);
+    background: var(--panel);
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--gap-lg);
+}
+
+/* Car Cards */
+.car-card {
+    background: var(--panel);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: var(--secondary);
+    cursor: pointer;
+    transition: transform var(--transition-smooth);
+}
+
+.car-card:hover {
+    transform: scale(1.04);
+}
+
+.car-img img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    background: var(--panel);
+    box-shadow: var(--shadow-card);
+}
+
+.car-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--card-padding);
+}
+
+.car-details h3 {
+    margin-bottom: var(--gap-sm);
+}
+
+.car-desc {
+    font-size: var(--font-size-small);
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.car-price {
+    font-weight: bold;
+    font-size: var(--font-size-price);
+    color: var(--price-color);
+    margin-bottom: 15px;
+}
+
+.car-actions {
+    display: flex;
+    gap: var(--gap-sm);
+}
+
+/* Button Styles */
+.btn-main.bm {
+    border-radius: var(--radius-input);
+}
+
+.btn-main.sm {
+    padding: 8px 14px;
+    font-size: var(--font-size-small);
+}
+
+/* No Results State */
+.no-cars {
+    text-align: center;
+    font-size: var(--font-size-price);
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN 
+   ========================================================================== */
+
+/* Large Tablets (max-width: 1200px) */
+@media (max-width: 1200px) {
+    .collection-hero {
+        padding: 80px 15px;
+    }
+    
+    .car-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}
+
+/* Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+    .collection-hero {
+        max-height: 45vh;
+    }
+    
+    .collection-hero h1 {
+        font-size: clamp(3rem, 5vw, 3.5rem);
+    }
+    
+    .collection-hero p {
+        font-size: clamp(2rem, 2vw, 1.5rem);
+    }
+    
+    .car-grid {
+        gap: var(--gap-md);
+    }
+    
+    .car-card {
+        border-radius: 12px;
+    }
+    
+    .car-img img {
+        max-height: 180px;
+    }
+}
+
+/* Small Tablets & Large Phones (max-width: 768px) */
+@media (max-width: 768px) {
+    .collection-hero {
+        padding: 60px 10px;
+    }
+    
+    .collection-hero h1 {
+        font-size: 3rem;
+    }
+    
+    .collection-hero p {
+        font-size: 2rem;
+    }
+    
+    .car-collection {
+        padding: 40px 15px;
+    }
+    
+    .car-details {
+        padding: 15px;
+    }
+    
+    .car-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .btn-main.small {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .filters-wrapper {
+        padding: 25px;
+    }
+    
+    .filters-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-actions {
+        flex-direction: column;
+    }
+    
+    .filter-actions .btn-main,
+    .filter-actions .btn-secondary {
+        width: 100%;
+    }
+}
+
+/* Mobile Phones (max-width: 576px) */
+@media (max-width: 576px) {
+    .collection-hero {
+        min-height: 40vh;
+        padding: 40px 10px;
+    }
+    
+    .collection-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .collection-hero p {
+        font-size: 1.5rem;
+    }
+    
+    .car-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .car-img img {
+        max-height: 150px;
+    }
+    
+    .car-price {
+        font-size: 1rem;
+    }
+}

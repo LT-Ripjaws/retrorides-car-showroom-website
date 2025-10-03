@@ -1,0 +1,235 @@
+/* ==========================================================================
+   DASHBOARD STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   VARIABLES
+   -------------------------------------------------------------------------- */
+:root {
+    --gap-small: 1rem;
+    --gap-medium: 1.25rem;
+    --gap-large: 1.5rem;
+
+    --radius: 12px;
+    --radius-small: 8px;
+
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    --hover-shadow: 0 5px 15px rgba(252, 151, 19, 0.5);
+
+    --transition-fast: 0.3s ease;
+    --transition-medium: 0.4s ease;
+
+    --sidebar-expanded: 270px;
+    --sidebar-collapsed: 85px;
+}
+
+/* --------------------------------------------------------------------------
+   LAYOUT
+   -------------------------------------------------------------------------- */
+main {
+    padding: var(--gap-large);
+    display: flex;
+    flex-direction: column;
+}
+
+.full-container {
+    display: grid;
+    grid-template-columns: var(--sidebar-expanded) 1fr;
+    column-gap: var(--gap-small);
+    padding: var(--gap-small);
+    min-height: 100vh;
+    transition: grid-template-columns var(--transition-medium);
+}
+
+.full-container.collapsed {
+    grid-template-columns: var(--sidebar-collapsed) 1fr;
+}
+
+/* --------------------------------------------------------------------------
+   TOPBAR
+   -------------------------------------------------------------------------- */
+.topbar {
+    background: var(--background);
+    padding: var(--gap-small) var(--gap-large);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: var(--gap-large);
+}
+
+.topbar h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   SUMMARISATION CARDS
+   -------------------------------------------------------------------------- */
+.summarisation-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--gap-medium);
+    margin-bottom: 2rem;
+    
+}
+
+.summarisation-cards .card {
+    background: var(--background2);
+    padding: var(--gap-medium);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    border-left: 4px solid var(--primary);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.summarisation-cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.summarisation-cards .card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+
+
+/* --------------------------------------------------------------------------
+   CHART GRID
+   -------------------------------------------------------------------------- */
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--gap-large);
+    margin-bottom: 2rem;
+    
+}
+
+.chart-grid .panel {
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-grid .panel canvas {
+    flex: 1;
+    max-height: 220px !important;
+    width: 100% !important;
+}
+
+.chart-holder {
+    height: 220px;
+    background: var(--background);
+    border-radius: var(--radius-small);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5f7fb6;
+    font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   PANEL (Shared)
+   -------------------------------------------------------------------------- */
+.panel {
+    background: var(--panel);
+    padding: var(--gap-small) var(--gap-medium);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+}
+
+.panel h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   TABLES
+   -------------------------------------------------------------------------- */
+.table-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-large);
+    margin-bottom: 2rem;
+    
+}
+
+.table-grid table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.table-grid thead {
+    background: var(--background);
+}
+
+.table-grid th,
+.table-grid td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    text-transform: uppercase;
+}
+
+.table-grid th {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.table-grid tr:hover td {
+    background: rgba(88, 88, 88, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .full-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        margin: 0;
+    }
+
+    .summarisation-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .table-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .topbar h1 {
+        font-size: 1.2rem;
+    }
+
+    .summarisation-cards,
+    .chart-grid,
+    .table-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-holder {
+        height: 180px;
+    }
+}
+
+
+
+/* 1) Allow grid/flex children to shrink */
+.full-container,
+.full-container > * {      /* allow direct children to shrink */
+  min-width: 0;
+}
+
