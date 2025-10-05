@@ -6,12 +6,13 @@
    <img src="https://img.shields.io/badge/Status-Ongoing-success" alt="Status">
 </p>
 
----
+<p align="center">
+  <img src="screenshots/header.jpg" alt="Intro" width="900" />
+</p>
 
 ## 📖  Overview  
 A comprehensive **web application** for managing vintage car collections, sales, and restoration services while offering customers a seamless way to explore, book, and connect.  
 The Academic project is built with **PHP, MySQL, HTML, CSS, and JavaScript** using a custom **PHP MVC architecture** that's similar to Laravel.
-RetroRides ensures a professional and secure platform for both staff and customers.
 Overall, it was a great learning experience.
 
 ---
@@ -19,38 +20,38 @@ Overall, it was a great learning experience.
 ## 🚗 Features
 
 ### 🌐 Public Features
-- 🏠 **Landing Page** – Showcase featured classic cars and services.  
-- 🚘 **Car Collection Browser** – Browse available vintage automobiles.  
-- 🏛️ **About Us** – Learn about the dealership’s history and team.  
-- ✉️ **Contact Page** – Get in touch with the team.  
+-  **Landing Page** – Showcase featured classic cars and services.  
+-  **Car Collection Browser** – Browse available vintage automobiles.  
+-  **About Us** – Learn about the dealership’s history and team.  
+-  **Contact Page** – Get in touch with the team.  
 
 ### 👥 User Management
-- 📝 **User Registration & Authentication**  
-- 🔑 **Role-Based Access**: Customer, Sales, Admin  
-- 🔒 **“Remember Me” Sessions** – Secure token-based authentication  
-- 🧑‍💻 **Profile Management**  
+-  **User Registration & Authentication**  
+-  **Role-Based Access**: Customer, Sales, Admin  
+-  **“Remember Me” Sessions** – Secure token-based authentication  
+-  **Profile Management**  
 
 ### 🛡️ Admin Panel
-- 📊 **Dashboard** – Analytics & stats  
-- 👤 **User Management** – Activate/deactivate, roles  
-- 🧑‍🤝‍🧑 **Team Management** – Full CRUD for employees  
-- 🚗 **Car Inventory** – Full CRUD for cars  
-- 📅 **Booking Management**  
-- 💰 **Sales Tracking**  
+-  **Dashboard** – Analytics & stats  
+-  **User Management** – Activate/deactivate, roles  
+-  **Team Management** – Full CRUD for employees  
+-  **Car Inventory** – Full CRUD for cars  
+-  **Booking Management**  
+-  **Sales Tracking**  
 
 ### 🧑‍💼 Salesman
-- 📝 **TO-DO**  
+-  **TO-DO**  
 
 ### 🧑 Customer
-- 📝 **TO-DO**  
+-  **TO-DO**  
 
 ### 🔒 Security Features
-- 🛡️ **CSRF Protection**  
-- 🔑 **Password hashing (bcrypt)**  
-- 🔐 **Secure sessions** (HttpOnly, SameSite cookies)  
-- 🧹 **Input validation & sanitization**  
-- 🗂️ **SQL injection prevention** with prepared statements  
-- 👮 **Role-based authorization**  
+-  **CSRF Protection**  
+-  **Password hashing (bcrypt)**  
+-  **Secure sessions** (HttpOnly, SameSite cookies)  
+-  **Input validation & sanitization**  
+-  **SQL injection prevention** with prepared statements  
+-  **Role-based authorization**  
 
 ---
 
@@ -78,20 +79,20 @@ Overall, it was a great learning experience.
 
 
 ## 🛠️ Technology Stack
-- ⚙️ **Backend:** PHP  
-- 🗄️ **Database:** MySQL  
-- 🎨 **Frontend:** HTML5, CSS3, Vanilla JS  
-- 🧩 **Architecture:** Custom MVC + Dependency Injection  
-- 🔐 **Security:** CSRF tokens, bcrypt, prepared statements  
+-  **Backend:** PHP  
+-  **Database:** MySQL  
+-  **Frontend:** HTML5, CSS3, Vanilla JS  
+-  **Architecture:** Custom MVC + Dependency Injection  
+-  **Security:** CSRF tokens, bcrypt, prepared statements  
 
 ---
 
 ## 📋 Requirements
-- 🖥️ PHP  
-- 🗄️ MySQL  
-- 🌐 Apache/Nginx with `mod_rewrite` enabled  
-- 📦 Composer  
-- 🛠️ XAMPP 
+-  PHP  
+-  MySQL  
+-  Apache/Nginx with `mod_rewrite` enabled  
+-  Composer  
+-  XAMPP 
 
 ## 🚀 Installation
 
@@ -123,10 +124,10 @@ composer install
 - 🔑 **remember_me** – Persistent login tokens
 
 ### 🔮 Future Enhancements:
-- 🔍 **ML-based price predictions**  
-- 📊 **Predictive analytics dashboard**  
-- 🛠 **Salesman Module**  
-- 👤 **Customer Module**  
+-  **ML-based price predictions**  
+-  **Predictive analytics dashboard**  
+-  **Salesman Module**  
+-  **Customer Module**  
 
 ### 📝 License
 This project is licensed under the MIT License
