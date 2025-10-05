@@ -134,6 +134,12 @@ This project is licensed under the MIT License
 
 ### 📊 Project Status
 🚧 Active development – Version 1.0.0
+
+## 👤 Author
+*Chinmoy Guha*  
+
+- GitHub: [@LT-Ripjaws](https://github.com/LT-Ripjaws)  
+- Email: chinmoyguha676z@gmail.com
 <p align="center">
   <img src="https://user-images.githubusercontent.com/74038190/242390524-0c7eb6ed-663b-4ce4-bfbd-18239a38ba1b.gif" alt="Profile Banner" width="70%" height = "50%" />
 </p>
