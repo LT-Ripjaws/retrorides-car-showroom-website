@@ -3,7 +3,7 @@
 <p align="center">
    <img src="https://img.shields.io/badge/Contributors-1-brightgreen" alt="Contributors">
    <img src="https://img.shields.io/badge/Technologies-HTML%20%7C%20CSS%20%7C%20PHP | JavaScript-blue" alt="Technologies">
-   <img src="https://img.shields.io/badge/Status-Ongoing-success" alt="Status">
+   <img src="https://img.shields.io/badge/Status-Ongoing-orange" alt="Status">
 </p>
 
 <p align="center">
