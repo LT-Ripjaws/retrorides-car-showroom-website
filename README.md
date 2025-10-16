@@ -71,7 +71,7 @@ Overall, it was a great learning experience.
 | ![Cars](screenshots/collections.gif) | ![About](screenshots/about.gif) |
 
 | Contact Us | Authentication |
-|-------------|---------------|
+|--------------|---------------|
 | ![Contact](screenshots/contact.gif) | ![Authentication](screenshots/authentication.gif) |
 
 ### 🧑‍🤝‍🧑 Customer & Admin Module
