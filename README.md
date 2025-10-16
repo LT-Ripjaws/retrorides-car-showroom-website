@@ -43,7 +43,10 @@ Overall, it was a great learning experience.
 -  **TO-DO**  
 
 ### 🧑 Customer
--  **TO-DO**  
+-  **Dashboard** – Analytics & stats
+-  **Profile Management**
+-  **Own Booking Management**
+-  **Can book cars** 
 
 ### 🔒 Security Features
 -  **CSRF Protection**  
@@ -59,23 +62,22 @@ Overall, it was a great learning experience.
 ## ✨ Demo & Screenshots
 
 ### 🌐 Public Pages
-| Landing Page |
-|--------------|
-![Landing](screenshots/landing-page.gif) 
+| Landing Page | Car-Booking |
+|--------------|---------------|
+![Landing](screenshots/landing-page.gif) | ![carbooking](screenshots/car-booking.gif) |
 
 | Car Collection | About Us |
-|--------------|----------------|
+|-------------|---------------|
 | ![Cars](screenshots/collections.gif) | ![About](screenshots/about.gif) |
 
 | Contact Us | Authentication |
-|------------|----------------|
+|-------------|---------------|
 | ![Contact](screenshots/contact.gif) | ![Authentication](screenshots/authentication.gif) |
 
-### 🛡️ Admin Panel
-| Admin Pages |
-|--------------|
-![Dashboard](screenshots/admin-panel.gif)
-
+### 🧑‍🤝‍🧑 Customer & Admin Module
+| Customer pages | Admin Pages |
+|--------------|---------------|
+![customer](screenshots/customer.gif) | ![admin](screenshots/admin-panel.gif) |
 
 
 ## 🛠️ Technology Stack
@@ -105,7 +107,8 @@ cd retrorides
 composer install
 
 # 3. Configure database:
-# Import retrorides_db in your xampp's MySQL server. (will be provided later)
+# Import retrorides_db in your xampp's MySQL server.
+# Its in the config folder, create a db called retrorides_db, then import the tables from the dump file.
 
 # 4. Make sure xampp is configured:
 #   In xammp/apache/conf/httpd.conf make sure <Directory "C:/xampp/htdocs"> has
@@ -119,8 +122,6 @@ composer install
 - 🧑‍🤝‍🧑 **employees** – Staff members  
 - 🚗 **cars** – Car inventory  
 - 📅 **bookings** – Reservations  
-- ❓ **inquiries** – Customer's inquiries  
-- 🏷️ **offers** – Car offers and discounts  
 - 🔑 **remember_me** – Persistent login tokens
 
 ### 🔮 Future Enhancements:
