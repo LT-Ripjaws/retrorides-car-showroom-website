@@ -166,7 +166,8 @@ class RegisterController extends BaseController
             'description' => 'Register for RetroRides to start your vintage car journey',
             'previousName' => $this->old('username'),
             'previousEmail' => $this->old('email'),
-            'pageCSS' => '/assets/css/register.css'
+            'pageCSS' => '/assets/css/register.css',
+            'pageJS' => '/assets/js/register.js'
         ];
 
         $this->clearOldInput();

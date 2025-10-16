@@ -121,11 +121,15 @@ main {
 /* --------------------------------------------------------------------------
    Form Elements
    -------------------------------------------------------------------------- */
-.input-field {
-    margin-bottom: 20px;
+
+/* Input wrapper with toggle button */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
-.input-field input {
+.input-wrapper input {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -136,14 +140,42 @@ main {
     transition: all 0.3s ease;
 }
 
-.input-field input:focus {
+.input-wrapper input:focus {
     outline: none;
     border-color: var(--accent);
     background: rgba(255, 255, 255, 0.1);
 }
 
-.input-field input::placeholder {
+.input-wrapper input::placeholder {
     color: rgba(255, 255, 255, 0.5);
+}
+
+/* Password toggle button */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: var(--accent);
+}
+
+.toggle-password .material-symbols-rounded {
+    font-size: 1.3rem;
+}
+
+/* Adjust input padding when toggle button exists */
+.input-wrapper input {
+    padding-right: 3rem;
 }
 
 /* Remember Me Checkbox */

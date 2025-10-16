@@ -114,14 +114,7 @@
                             <p class="car-price"><?php echo $car['formatted_price']; ?></p>
                             
                             <div class="car-actions">
-                                <form action="<?php echo $baseUrl; ?>/test-drive" method="POST">
-                                    <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
-                                    <input type="hidden" name="car_id" value="<?php echo $car['car_id']; ?>">
-                                    <button type="submit" class="btn-main sm">Book Test Drive</button>
-                                </form>
-                                
-                                <form action="<?php echo $baseUrl; ?>/order" method="POST">
-                                    <input type="hidden" name="csrf_token" value="<?php echo $csrfToken; ?>">
+                                <form action="<?php echo $baseUrl; ?>/booking" method="GET">
                                     <input type="hidden" name="car_id" value="<?php echo $car['car_id']; ?>">
                                     <button type="submit" class="btn-main sm">Order Now</button>
                                 </form>

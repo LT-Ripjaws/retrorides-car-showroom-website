@@ -11,6 +11,12 @@ use App\Controllers\Admin\UsersController;
 use App\Controllers\CollectionController;
 use App\Controllers\AboutUsController;
 use App\Controllers\ContactUsController;
+use App\Controllers\Customer\CustomerDashboardController;
+use App\Controllers\Customer\CustomerBookingsController;
+use App\Controllers\CarBookingController;
+use App\Controllers\Customer\CustomerProfileController;
+
+
 
 /**
  * ---------------- Public Routes ----------------
@@ -29,6 +35,33 @@ $router->get('/collection', [CollectionController::class, 'index']);
 $router->get('/about', [AboutUsController::class, 'index']);
 $router->get('/contact', [ContactUsController::class, 'index']);
 
+
+$router->get('/booking', [CarBookingController::class, 'showBookingForm']);
+$router->post('/booking/create', [CarBookingController::class, 'processBooking']);
+$router->get('/booking/confirmation', [CarBookingController::class, 'showConfirmation']);
+
+/**===========================================================
+ *  Customer
+ *============================================================ */
+
+/**
+ * ---------------- Customer Dashboard ----------------
+ */
+$router->get('/customer/dashboard', [CustomerDashboardController::class, 'index']);
+
+/**
+ * ---------------- Customer Bookings ----------------
+ */
+
+$router->get('/customer/bookings', [CustomerBookingsController::class, 'index']);
+$router->post('/customer/bookings/cancel', [CustomerBookingsController::class, 'cancelBooking']);
+
+/**
+ * ---------------- Profile management ----------------
+ */
+$router->get('/customer/profile', [CustomerProfileController::class, 'showProfile']);
+$router->post('/customer/profile/update', [CustomerProfileController::class, 'updateProfile']);
+$router->post('/customer/profile/password', [CustomerProfileController::class, 'updatePassword']);
 
 
 /**===========================================================

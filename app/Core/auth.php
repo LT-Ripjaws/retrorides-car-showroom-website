@@ -35,7 +35,7 @@ function roleRedirection(string $role): void
     $routes = [
         'admin'    => $basePath . '/admin/dashboard',
         'sales'    => $basePath . '/sales/dashboard', 
-        'customer' => $basePath . '/customer/dashboard',
+        'customer' => $basePath . '/',
     ];
     
     $target = $routes[$role] ?? $basePath . '/login?error=invalid_role';

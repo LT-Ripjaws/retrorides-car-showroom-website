@@ -18,6 +18,9 @@ $baseUrl = getBasePath();
     <link rel="stylesheet" href="<?php echo $baseUrl; ?>/assets/css/components.css">
     <link rel="stylesheet" href="<?php echo $baseUrl; ?>/assets/css/header.css">
     <link rel="stylesheet" href="<?php echo $baseUrl; ?>/assets/css/animations.css">
+
+    <!-- Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
     
     <!-- Page-specific CSS -->
     <?php if (isset($pageCSS)): ?>

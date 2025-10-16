@@ -28,23 +28,31 @@
 
                 <!-- Email input -->
                 <div class="input-field">
+                 <div class="input-wrapper">
                     <input type="email" 
                             name="username" 
                             placeholder="Enter your email" 
                             required 
                             value="<?php echo $previousEmail; ?>"
                             autocomplete="email">
-                    <div style="color:red">*</div>
+                     <div style="color:red">*</div>
+                    </div>  
                 </div>
 
                 <!-- Password input -->
                 <div class="input-field">
-                    <input type="password" 
-                            name="password" 
-                            placeholder="Enter your password" 
-                            required
-                            autocomplete="current-password">
-                    <div style="color:red">*</div>
+                    <div class="input-wrapper">
+                        <input type="password" 
+                                id="loginPassword"
+                                name="password" 
+                                placeholder="Enter your password" 
+                                required
+                                autocomplete="current-password">
+                        <button type="button" class="toggle-password">
+                            <span class="material-symbols-rounded">visibility</span>
+                        </button>
+                        <div style="color:red">*</div>
+                    </div>
                 </div>
 
                 <!-- Remember me checkbox -->

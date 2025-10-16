@@ -24,39 +24,55 @@
 
         <!-- Username -->
         <div class="input-field">
-            <input type="text" 
-                    name="username" 
-                    placeholder="Enter a username (min 3 characters)" 
-                    minlength="3" 
-                    required
-                    value="<?php echo $previousName; ?>">
+            <div class="input-wrapper">
+                <input type="text" 
+                        name="username" 
+                        placeholder="Enter a username (min 3 characters)" 
+                        minlength="3" 
+                        required
+                        value="<?php echo $previousName; ?>">
+            </div>
         </div>
 
         <!-- Email -->
         <div class="input-field">
-            <input type="email" 
-                    name="email" 
-                    placeholder="Enter a valid email" 
-                    required
-                    value="<?php echo $previousEmail; ?>">
+            <div class="input-wrapper">
+                <input type="email" 
+                        name="email" 
+                        placeholder="Enter a valid email" 
+                        required
+                        value="<?php echo $previousEmail; ?>">
+             </div>
         </div>
 
         <!-- Password -->
         <div class="input-field">
-            <input type="password" 
-                    name="password" 
-                    placeholder="Password (at least 8 characters)" 
-                    minlength="8" 
-                    required>
+            <div class="input-wrapper">
+                <input type="password" 
+                        id="regPassword"
+                        name="password" 
+                        placeholder="Password (at least 8 characters)" 
+                        minlength="8" 
+                        required>
+                <button type="button" class="toggle-password" data-target="regPassword">
+                    <span class="material-symbols-rounded">visibility</span>
+                </button>
+            </div>
         </div>
 
         <!-- Confirm Password -->
         <div class="input-field">
-            <input type="password" 
-                    name="confirm_password" 
-                    placeholder="Re-enter your password" 
-                    minlength="8" 
-                    required>
+            <div class="input-wrapper">
+                <input type="password" 
+                        id="regConfirmPassword"
+                        name="confirm_password" 
+                        placeholder="Re-enter your password" 
+                        minlength="8" 
+                        required>
+                <button type="button" class="toggle-password" data-target="regConfirmPassword">
+                    <span class="material-symbols-rounded">visibility</span>
+                </button>
+            </div>
         </div>
 
         <button type="submit" class="btn-main" name="register">Register</button>

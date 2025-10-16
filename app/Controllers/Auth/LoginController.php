@@ -179,8 +179,8 @@ class LoginController extends BaseController
             'previousEmail' => $this->old('username'),
             'showRememberMe' => true,
             'registerLink' => getBasePath() . '/register',
-            'pageCSS' => '/assets/css/login.css'
-
+            'pageCSS' => '/assets/css/login.css',
+            'pageJS' => '/assets/js/login.js'
         ];
 
         $this->clearOldInput();
