@@ -105,6 +105,8 @@ cd retrorides
 
 # 2. Install dependencies:
 composer install
+# then in terminal inside the folder:
+composer dump-autoload
 
 # 3. Configure database:
 # Import retrorides_db in your xampp's MySQL server.
