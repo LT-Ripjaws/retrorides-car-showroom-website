@@ -3,7 +3,7 @@
 <p align="center">
    <img src="https://img.shields.io/badge/Contributors-1-brightgreen" alt="Contributors">
    <img src="https://img.shields.io/badge/Technologies-HTML%20%7C%20CSS%20%7C%20PHP | JavaScript-blue" alt="Technologies">
-   <img src="https://img.shields.io/badge/Status-Ongoing-orange" alt="Status">
+   <img src="https://img.shields.io/badge/Status-Completed-green" alt="Status">
 </p>
 
 <p align="center">
@@ -125,12 +125,6 @@ composer dump-autoload
 - 🚗 **cars** – Car inventory  
 - 📅 **bookings** – Reservations  
 - 🔑 **remember_me** – Persistent login tokens
-
-### 🔮 Future Enhancements:
--  **ML-based price predictions**  
--  **Predictive analytics dashboard**  
--  **Salesman Module**  
--  **Customer Module**  
 
 ### 📝 License
 This project is licensed under the MIT License
